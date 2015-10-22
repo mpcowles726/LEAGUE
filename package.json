@@ -1,0 +1,29 @@
+{
+  "name": "ff_league_app",
+  "version": "1.0.0",
+  "description": "side bet app",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mpcowles726/theleague.git"
+  },
+  "keywords": [
+    "shassholes"
+  ],
+  "author": "Matt Cowles",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mpcowles726/theleague/issues"
+  },
+  "homepage": "https://github.com/mpcowles726/theleague#readme",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "dotenv": "^1.2.0",
+    "ejs": "^2.3.4",
+    "express": "^4.13.3",
+    "mongoose": "^4.2.0"
+  }
+}
