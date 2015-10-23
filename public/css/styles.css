@@ -1,0 +1,12 @@
+.row {
+	border: solid;
+	margin-top: 40px;
+
+}
+
+.jumbotron {
+	background-image: url('http://dailyfantasysportsreviews.info/wp-content/uploads/2013/10/football-on-field.jpg');
+	
+	background-size: cover;
+}
+
