@@ -18,31 +18,121 @@
 
   </head>
   <body>
-  <<div class="jumbotron">
+
+  <!-- Modal -->
+<div id="loginModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Login Form</h4>
+      </div>
+      <div class="modal-body">
+       		<form action="" method="POST" role="form">
+       		
+       			<div class="form-group">
+       				<label for="Email">Email</label>
+       				<input type="text" class="form-control" id="emailInput" placeholder="Input field">
+       				<label for="Password">Password</label>
+       				<input type="password" class="form-control" id="passwordInput" placeholder="Input field">
+       			</div>
+       		
+       			
+       		
+       			<button type="submit" class="btn btn-primary">Submit</button>
+       		</form>
+             </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div id="signupModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Signup Form</h4>
+      </div>
+      <div class="modal-body">
+       		<form action="" method="POST" role="form">
+       		
+       			<div class="form-group">
+       				<label for="Email">Email</label>
+       				<input type="text" class="form-control" id="emailInput" placeholder="Input field">
+       				<label for="Password">Password</label>
+       				<input type="password" class="form-control" id="passwordInput" placeholder="Input field">
+       			</div>
+       		
+       			
+       		
+       			<button type="submit" class="btn btn-primary">Submit</button>
+       		</form>
+             </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+  <div class="jumbotron">
   	<div class="container">
   		<h1>THE LEAGUE</h1>
   		<p>Welcome to the first Yahoo Fantasy Footbal Side Bet app!</p>
   		<p>
-  			<a class="btn btn-primary btn-lg">Login</a>
-  			<a class="btn btn-primary btn-lg">Signup</a>
+  	
+  			<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#loginModal">Login</button>
+  			<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signupModal">Signup</button>
   		</p>
   	</div>
   </div>
 
  <!--RESPONSIVE COLUMNS -->
- <div class="row">
+<div class="containers">
+ <div class="row ">
   <div id="column1" class="col-xs-12 col-sm-4 panel" > 
-  TEAM 1
+  	<p> MY TEAM </p>
+
+  	</ul>
+  
 
   </div>
   <div id="column2" class="col-xs-6 col-sm-4 panel" > 
-  USERS
+ <button type="button" class="btn btn-default text-center" data-toggle="dropdown">TEAMS</button>
+  	<ul class="dropdown-menu">
+  		<li> TEAM 1</li>
+  		<Li> TEAM 2</Li>
+  		<Li> TEAM 3</Li>
+  		<li> TEAM 4</li>
+  		<LI> TEAM 5</LI>
+  		<Li> TEAM 6</Li>
+  		<LI> TEAM 7</LI>
+  		<li> TEAM 8</li>
+  		<Li> TEAM 9</Li>
+  		<li> TEAM 10</li>
+  		<Li> TEAM11</Li>
+  		<Li> TEAM 12</Li>
+
+  	</ul>
   </div>
   <div id="column3" class="col-xs-6 col-sm-4 panel" >
   TEAM 2
   </div>
 </div>
-
+</div>
 
 </body>
 </html>

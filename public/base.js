@@ -1,1 +1,1 @@
-console.log('clientside js connected')
+console.log('clientside js connected');
