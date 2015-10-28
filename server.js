@@ -9,7 +9,7 @@ var express = require('express'),
 	ejs = require('ejs'),
 	session = require('express-session');
 
-// mongoose.connect(process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || "mongodb://localhost/league");
+ mongoose.connect(process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || "mongodb://localhost/LEAGUE");
 
 //CONFIG
 //SET EJS AS VIEW ENGINE
@@ -92,4 +92,4 @@ app.post('/sessions', function (req, res) {
 
 
 //LISTENING ON PORT 3000
-app.listen(process.env.PORT || 5000)
+app.listen(process.env.PORT || 3000);
