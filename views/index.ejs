@@ -19,72 +19,7 @@
   </head>
   <body>
 
-  <!-- Modal -->
-<div id="loginModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Login Form</h4>
-      </div>
-      <div class="login-modal-body">
-       		<form action="" method="POST" role="form">
-       		
-       			<div class="form-group">
-       				<label for="Email">Email</label>
-       				<input type="text" class="form-control" id="loginEmailInput" placeholder="Input field">
-       				<label for="Password">Password</label>
-       				<input type="password" class="form-control" id="loginPasswordInput" placeholder="Input field">
-       			</div>
-       		
-       			
-       		
-       			<button type="submit" class="btn btn-primary">Submit</button>
-       		</form>
-             </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-
-<div id="signupModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Signup Form</h4>
-      </div>
-      <div class="signup-modal-body">
-       		<form action="" method="POST" role="form">
-       		
-       			<div class="form-group">
-       				<label for="Email">Email</label>
-       				<input type="text" class="form-control" id="signupEmailInput" placeholder="Input field">
-       				<label for="Password">Password</label>
-       				<input type="password" class="form-control" id="signupPasswordInput" placeholder="Input field">
-       			</div>
-       		
-       			
-       		
-       			<button type="submit" class="btn btn-primary">Submit</button>
-       		</form>
-             </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-
-  </div>
-</div>
-
+  
 
 
 
@@ -93,10 +28,10 @@
   	<div class="container">
   		<h1>THE LEAGUE</h1>
   		<p>Welcome to the first Yahoo Fantasy Footbal Side Bet app!</p>
-  		<p>
+  		
   	
-  			<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#loginModal">Login</button>
-  			<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signupModal">Signup</button>
+  			<button id-"loginBtn" type="button" class="btn btn-primary btn-lg" data-target="#loginModal">Login</button>
+  			<a href="/signup"><button id="signupBtn" type="button" class="btn btn-primary btn-lg"  data-target="#signupModal">Signup</button></a>
   		</p>
   	</div>
 

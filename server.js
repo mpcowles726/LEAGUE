@@ -6,9 +6,10 @@ var express = require('express'),
 	User = require('./models/user'),
 	port = process.env.PORT || 3000,
 	mongoose = require('mongoose'),
-	ejs = require('ejs');
+	ejs = require('ejs'),
+	session = require('express-session');
 
-mongoose.connect('mongodb://localhost/league');
+// mongoose.connect(process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || "mongodb://localhost/league");
 
 //CONFIG
 //SET EJS AS VIEW ENGINE
@@ -17,6 +18,13 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 //BODY PARSER CONFIG
 app.use(bodyParser.urlencoded({ extended: true }));
+//SET SESSIONS OPTIONS
+app.use(session({
+	saveUninitialized: true,
+	resave: true,
+	secret: 'SuperSecretCookie',
+	cookie: {maxAge: 30 * 60 * 1000}}));
+
 
 app.get('/', function (req, res) {
 	res.render('index');
@@ -36,9 +44,14 @@ app.get('/login', function (req,res) {
 app.post('/users', function (req, res) {
 	console.log('request body: ', req.body);
 	User.createSecure(req.body.email, req.body.password, function (err, user) {
-		res.json(user);
+		if (err)
+			res.send (err);
+
+
+
 	});
-		});
+	//res.redirect('/');
+});
 
 app.get('/users', function (req, res) {
 		User.find(function (err, users) {
@@ -56,11 +69,18 @@ app.get('/users', function (req, res) {
 		});
 	});
 
+app.get('/profile', function (req, res) {
+	User.findOne({_id: req.session.userId}, function (err, currentUser) {
+		res.render('index.ejs', {user: currentUser});
+	});
+});
+
 //LOGIN ROUTES
-app.post('/sesions', function (req, res) {
+app.post('/sessions', function (req, res) {
 	console.log(req);
 	User.authenticate(req.body.email, req.body.password, function (err, user) {
-    res.json(user);
+	req.sessions.userId = user._id;
+    res.redirect('/profile');
   });
 });
 
@@ -72,6 +92,4 @@ app.post('/sesions', function (req, res) {
 
 
 //LISTENING ON PORT 3000
-app.listen(3000, function () {
-	console.log('listening on port 3000');
-});
+app.listen(process.env.PORT || 5000)
