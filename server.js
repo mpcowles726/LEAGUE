@@ -32,7 +32,7 @@ app.get('/login', function (req,res) {
 }); 
 
 
-
+//CREATE USER ROUTE
 app.post('/users', function (req, res) {
 	console.log('request body: ', req.body);
 	User.createSecure(req.body.email, req.body.password, function (err, user) {
@@ -56,6 +56,13 @@ app.get('/users', function (req, res) {
 		});
 	});
 
+//LOGIN ROUTES
+app.post('/sesions', function (req, res) {
+	console.log(req);
+	User.authenticate(req.body.email, req.body.password, function (err, user) {
+    res.json(user);
+  });
+});
 
 
 
