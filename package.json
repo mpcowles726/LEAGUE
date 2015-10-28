@@ -1,34 +1,29 @@
 {
-  "name": "ff_league_app",
+  "name": "league",
   "version": "1.0.0",
-  "description": "side bet app",
+  "description": "ff sports app",
   "main": "server.js",
-  "scripts": {
-    "test": "test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mpcowles726/theleague.git"
-  },
-  "keywords": [
-    "shassholes"
-  ],
-  "author": "Matt Cowles",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/mpcowles726/theleague/issues"
-  },
-  "homepage": "https://github.com/mpcowles726/theleague#readme",
   "dependencies": {
-    "bcrypt": "^0.8.5",
-    "body-parser": "^1.14.1",
     "ejs": "^2.3.4",
+    "body-parser": "^1.14.1",
+    "bcrypt": "^0.8.5",
     "express": "^4.13.3",
     "express-session": "^1.12.0",
     "mongoose": "^4.2.0"
-  }
-}
-
-"scripts": {
-  "start": "node server.js"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mpcowles726/LEAGUE.git"
+  },
+  "author": "matt cowles",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mpcowles726/LEAGUE/issues"
+  },
+  "homepage": "https://github.com/mpcowles726/LEAGUE#readme"
 }
