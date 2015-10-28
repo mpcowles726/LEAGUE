@@ -3,15 +3,18 @@ var express = require('express'),
 	app = express(),
 	path = require('path'),
 	bodyParser = require('body-parser'),
-	User = require('./models/user'),
+	db = require('./models'),
 	port = process.env.PORT || 3000,
 	mongoose = require('mongoose'),
 	ejs = require('ejs'),
 	session = require('express-session');
+	
+  	require('dotenv').load();
 
- //mongoose.connect(process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || "mongodb://localhost/LEAGUE");
+ mongoose.connect(process.env.MONGOLAB_URL || process.env.MONGOHQ_URL || "mongodb://localhost/LEAGUE");
 
 //CONFIG
+
 //SET EJS AS VIEW ENGINE
 app.set('view engine', 'ejs');
 //SERVE JS AND CSS FILES
@@ -43,7 +46,7 @@ app.get('/login', function (req,res) {
 //CREATE USER ROUTE
 app.post('/users', function (req, res) {
 	console.log('request body: ', req.body);
-	User.createSecure(req.body.email, req.body.password, function (err, user) {
+	db.User.createSecure(req.body.email, req.body.password, function (err, user) {
 		if (err)
 			res.send (err);
 
@@ -61,8 +64,10 @@ app.get('/users', function (req, res) {
 			res.json(users);
 		});
 });
+
+//ROUTE TO FIND A USER
 app.get('/users', function (req, res) {
-		User.findById(req.params.user_id, function (err, user) {
+		db.User.findById(req.params.user_id, function (err, user) {
 			if(err)
 				res.send(err);
 			res.json(user);
@@ -70,7 +75,7 @@ app.get('/users', function (req, res) {
 	});
 
 app.get('/profile', function (req, res) {
-	User.findOne({_id: req.session.userId}, function (err, currentUser) {
+	db.User.findOne({_id: req.session.userId}, function (err, currentUser) {
 		res.render('index.ejs', {user: currentUser});
 	});
 });
@@ -89,6 +94,29 @@ app.post('/sessions', function (req, res) {
 });
 });
 
+//LOGOUT ROUTE
+app.get('/logout', function (req, res) {
+	req.session.userId = null;
+	res.redirect('/');
+});
+
+//ROUTE TO USER PROFILE PAGE
+app.get('/profile', function (req, res) {
+	if (req.session.userId === undefined) {
+		console.log('user not found');
+		res.redirect('/');
+	} else {
+		User.findOne({Name: req.session.userId}), function (err, currentUser) {
+			if (err) {
+				console.log('database error: ' , err);
+				res.redirect('/');
+			} else {
+				console.log('loading profile of ', currentUser);
+				res.render('/profile');
+			}
+		}
+	}
+});
 
 
 

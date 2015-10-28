@@ -2,7 +2,6 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var bcrypt = require('bcrypt');
 
-mongoose.connect(process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || "mongodb://localhost/LEAGUE");
 
 var userSchema = new Schema({
 	email: String,
@@ -42,7 +41,7 @@ userSchema.methods.checkPassword = function (password) {
 };
 
    
+
+
 var User = mongoose.model('User', userSchema);
-
-
 module.exports = User;
