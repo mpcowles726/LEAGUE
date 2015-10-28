@@ -27,3 +27,7 @@
   },
   "homepage": "https://github.com/mpcowles726/LEAGUE#readme"
 }
+
+"scripts": {
+  "start": "node server.js"
+}
