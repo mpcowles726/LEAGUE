@@ -6,7 +6,14 @@
 
 .jumbotron {
 	background-image: url('https://www.draftday.com/images/lobby_bg_field1920.jpg');
-	
 	background-size: cover;
 }
 
+.whiterectangle {
+    background-color: #FFF;
+    height: 350px;
+    width: 100%;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+}
