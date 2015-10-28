@@ -17,11 +17,19 @@ $('#signup-form').submit(function() {
   $.post('/users', signupData, function(response){
     console.log(response);
   }).done( console.log('done')  );
-});
+}).validate();
 
 $('#login-form').submit(function () {
-	$.post('/sessions', loginData, function(response) {
+	$.post('/api/sessions', loginData, function(response) {
 		console.log(response);
+	}).validate({
+		rules: {
+			email: {
+				required: true,
+				email: true
+			},
+			password: true
+		},
 	});
 });
 

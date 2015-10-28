@@ -9,7 +9,7 @@ var express = require('express'),
 	ejs = require('ejs'),
 	session = require('express-session');
 
- mongoose.connect(process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || "mongodb://localhost/LEAGUE");
+ //mongoose.connect(process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || "mongodb://localhost/LEAGUE");
 
 //CONFIG
 //SET EJS AS VIEW ENGINE
@@ -79,9 +79,14 @@ app.get('/profile', function (req, res) {
 app.post('/sessions', function (req, res) {
 	console.log(req);
 	User.authenticate(req.body.email, req.body.password, function (err, user) {
-	req.sessions.userId = user._id;
-    res.redirect('/profile');
-  });
+	if (err) {
+		res.send(err);
+	} else if (user) {
+	req.sessions.user = user;
+	console.log(user);
+    res.redirect('/');
+  }
+});
 });
 
 
@@ -92,4 +97,6 @@ app.post('/sessions', function (req, res) {
 
 
 //LISTENING ON PORT 3000
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 5000);
+
+
