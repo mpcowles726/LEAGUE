@@ -9,11 +9,13 @@ var express = require('express'),
 	ejs = require('ejs'),
 	session = require('express-session');
 	
+
+
+	
   	require('dotenv').load();
 
  mongoose.connect(process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || "mongodb://localhost/LEAGUE");
 
-//CONFIG
 
 //SET EJS AS VIEW ENGINE
 app.set('view engine', 'ejs');
@@ -27,6 +29,10 @@ app.use(session({
 	resave: true,
 	secret: 'SuperSecretCookie',
 	cookie: {maxAge: 30 * 60 * 1000}}));
+
+
+
+
 
 
 app.get('/', function (req, res) {

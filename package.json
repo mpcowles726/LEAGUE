@@ -11,7 +11,8 @@
     "express": "^4.13.3",
     "express-session": "^1.12.0",
     "grant-express": "^3.5.1",
-    "mongoose": "^4.2.0"
+    "mongoose": "^4.2.0",
+    "morgan": "^1.6.1"
   },
   "devDependencies": {},
   "scripts": {
