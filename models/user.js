@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var bcrypt = require('bcrypt');
-
+var salt = bcrypt.genSaltSync(10);
 
 var userSchema = new Schema({
 	email: String,
@@ -13,7 +13,9 @@ userSchema.statics.createSecure = function (email, password, callback) {
 
 bcrypt.genSalt(function (err, salt) {
 	console.log('salt: ', salt);
+	
 	bcrypt.hash(password, salt, function (err, hash) {
+		
 		UserModel.create({
 			email: email,
 			passwordDigest: hash

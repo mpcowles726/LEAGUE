@@ -31,9 +31,10 @@
   	<div class="container">
   		<p>Welcome to the first Yahoo Fantasy Footbal Side Bet app!</p>
       <!-- profile.ejs -->
-<h1>Profile</h1>
+    <h1>Profile</h1>
+    <p>Logged in as <%= currentUser.email %></p>
 <hr>
-<h2>Welcome! You're logged in as <%= user.email %>.</h2>
+
 <a id="logout" href="/logout" class="btn btn-default">Log Out</a>
 
   	   
@@ -47,12 +48,12 @@
  <div class="row ">
   <div id="column1" class="col-xs-12 col-sm-4 panel" > 
   	<p> MY TEAM </p>
-
+  
   	</ul>
   
 
   </div>
-  <div id="column2" class="col-xs-6 col-sm-4 panel" > 
+  <div id="column2" class="col-xs-12 col-sm-4 panel" > 
  <button type="button" class="btn btn-default text-center" data-toggle="dropdown">TEAMS</button>
   	<ul class="dropdown-menu">
   		<li> TEAM 1</li>
@@ -70,7 +71,7 @@
 
   	</ul>
   </div>
-  <div id="column3" class="col-xs-6 col-sm-4 panel" >
+  <div id="column3" class="col-xs-12 col-sm-4 panel" >
   TEAM 2
   </div>
 </div>
