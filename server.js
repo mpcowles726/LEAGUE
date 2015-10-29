@@ -42,6 +42,10 @@ app.get('/login', function (req,res) {
 	res.render('login');
 }); 
 
+app.get('/profile', function (req, res) {
+	res.render('profile');
+});
+
 
 //CREATE USER ROUTE
 app.post('/users', function (req, res) {
