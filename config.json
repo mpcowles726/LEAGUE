@@ -1,0 +1,15 @@
+
+
+{
+  "server": {
+    "protocol": "http",
+    "host": "dummy.com:3000"
+  },
+  "Yahoo Fantasy Sports API": {
+    "key": "dj0yJmk9YWhpSnA5UUlSUGQ4JmQ9WVdrOWVuRXdiRkJpTjJzbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD0zMg--",
+    "secret": "4875d331b73c30e3d801f6fa9c180e8eeafe81d6",
+    "callback": "heroku.com",
+    "scope": [
+      "user_groups",
+      "user_likes"
+    ]
