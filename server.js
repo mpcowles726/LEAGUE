@@ -56,20 +56,24 @@ app.get('/profile', function (req, res) {
 //CREATE USER ROUTE
 app.post('/users', function (req, res) {
 	console.log('request body: ', req.body);
-	db.createSecure(req.body.email, req.body.password, function (err, user) {
-		if (err) {
-			res.send (err);
+		
+	
 
-		} 
-		console.log("the user from createSecure:", user);
-		req.session.userId = user._id;
-			res.redirect('/profile');	
+				db.createSecure(req.body.email, req.body.password, function (err, user) {
+					if (err) {
+						res.send ("Could not create user" + err);} 
+					 {
+		
+						console.log("the user from createSecure:", user);
+						req.session.userId = user._id;
+						res.redirect('/profile');	
+				         }
+			      });
+		
+		}
+	);
 
 
-
-	});
-	//res.redirect('/');
-});
 
 
 
@@ -90,15 +94,14 @@ app.post('/session', function (req, res) {
 	console.log(req.body);
 	db.authenticate(req.body.email, req.body.password, function (err, user) {
 	if (err) {
-		res.send(err);
-	} else if (user) {
-	req.session.userId = user._Id;
-	console.log(user);
-    res.redirect('/profile');
-  }
-});
-});
+		res.send('User Not Found!');
+	} else {
+		req.session.userId = db._id;
+    	res.redirect('/profile');
+  }}
 
+);
+});
 //LOGOUT ROUTE
 app.get('/logout', function (req, res) {
 	req.session.userId = null;

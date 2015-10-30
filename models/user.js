@@ -25,15 +25,18 @@ bcrypt.genSalt(function (err, salt) {
 };
 
 
+
 // authenticate user (when user logs in)
 userSchema.statics.authenticate = function (email, password, callback) {
  // find user by email entered at log in
  this.findOne({email: email}, function (err, foundUser) {
    console.log(foundUser);
    if (foundUser === null) {
-   	callback('Can\'t find user with email ' + email, foundUser); }
-   	else if (user.checkPassword(password)) {
+   	callback('Can\'t find user with email ' + email); }
+   		else if (foundUser.checkPassword(password)) {
    		callback(null, foundUser);
+   	} else {
+   		callback("Error: incorrect password", null);
    	}
 
    	});
@@ -41,6 +44,7 @@ userSchema.statics.authenticate = function (email, password, callback) {
 userSchema.methods.checkPassword = function (password) {
 	return bcrypt.compareSync(password, this.passwordDigest);
 };
+
 
    
 

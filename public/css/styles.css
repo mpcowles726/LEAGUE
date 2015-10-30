@@ -4,17 +4,48 @@
 
 }
 
-.jumbotron {
+.jumbotron1 {
 	text-align: center;
 	background-size: cover;
+    height: 700px;
+    background-image: url(http://fullhdpictures.com/wp-content/uploads/2015/10/Excellent-American-Football-Wallpapers.jpg);
 }
 
-.whiterectangle {
-    background-color: #FFF;
-    height: 350px;
-    width: 100%;
-    opacity: 0.5;
-    position: absolute;
-    top: 0;
+
+
+.jumbotron2 {
+    text-align: center;
+    background-size: cover;
+     background-image: url(http://fullhdpictures.com/wp-content/uploads/2015/10/Excellent-American-Football-Wallpapers.jpg);
 }
 
+
+
+#column1 {
+    text-align: center;
+    border: solid;
+
+}
+
+#column2 {
+    text-align: center;
+    background-color: grey;
+}
+
+#column3 {
+    text-align: center;
+    border: solid;
+}
+
+#H1 {
+    font: 8px;
+}
+
+#dropBtn {
+    width: 130px;
+    height: 80px;
+}
+
+body {
+   background-color: grey;
+}
