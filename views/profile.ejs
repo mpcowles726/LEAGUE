@@ -3,6 +3,9 @@
 <html lang="en">
   <head>
     <% include ./partials/head %>
+
+
+  
   </head>
   <body>
 
@@ -12,7 +15,7 @@
 
 
 
-  <div class="jumbotron2">
+<div class="jumbotron2">
 <!--<div class="whiterectangle"></div> -->
   	<div class="container">
   		<p>Welcome to the first Yahoo Fantasy Footbal Side Bet app!</p>
@@ -34,23 +37,38 @@
  <div class="row ">
   <div id="column1" class="col-xs-12 col-sm-4 panel" > 
   	<h1 id="h1" > MY TEAM </h1>
-  
-  	</ul>
+      <ul>
+        <li>QB - Cam Newton - 20.44pts</li>
+  	      <li>WR - Antonio Brown - 17.58pts</li>
+           <li>WR - Larry Fitzgerald - 12.98pts</li>
+            <li>RB - Chris Ivory - 12.66pts</li>
+             <li>RB - Ahmad Bradshaw - 4.61pts</li>
+              <li>TE - Gary Barnidge - 9.46pts</li>
+      </ul>
   
 
-  </div>
+    </div>
+
   <div id="column2" class="col-xs-12 col-sm-4 panel" > 
  <button type="button" class="btn btn-default text-center" data-toggle="dropdown" id="dropBtn">TEAMS</button>
-  	<ul class="dropdown-menu">
-  		li*
-
+  	<ul class="dropdown-menu" id="playerList">
+  		<a><li id="Franklin">Franklin</li></a> 
+      <a><li id="Benson">Benson</li></a> 
+      <a><li id="Eric">Eric</li></a> 
+      <a><li id="Marcus">Marcus</li></a> 
+      <a><li id="Steven">Steven</li></a> 
+      <a><li id="Nick">Nick</li></a> 
+      
   	</ul>
 
 
   </div>
   <div id="column3" class="col-xs-12 col-sm-4 panel" >
  <h2> OPPONENT </h2>
-  </div>
+   <div id="partials">
+   <% include ./partials/Benson %>
+ </div>
+
 </div>
 </div>
 

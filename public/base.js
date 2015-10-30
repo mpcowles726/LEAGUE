@@ -1,37 +1,16 @@
 
 $(document).ready(function() {
 console.log('clientside js connected');
-
-
-
-
-
-
-
-
-
-
-
-
-// $('#signup-form').submit(function() {
-// 	var signupData = $("#signup-form").serialize();
-// //	console.log(signupData);
-// 	console.log('submitted');
-
-//   $.post('/users', signupData, function(response){
-//     console.log(response);
-//   }).done( console.log('done')  );
-//});
-
-// $('#login-form').submit(function () {
-
-// 		var loginData = $("#login-form").serialize();
-// 		console.log(loginData);
+var franklin = (<% include partials/Franklin %>);
 	
-// 	$.post('/session', loginData, function(response) {
-// 		console.log(response);
-// 	});
-// 	});
+$("#Franklin").click(function () {
+	$("#partials").append(franklin);
+
+	
+	
+});
+	
+	
 
 
 
@@ -40,3 +19,6 @@ console.log('clientside js connected');
 
 
 });
+
+
+ejs.render(string, options);

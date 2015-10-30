@@ -126,11 +126,24 @@ app.get('/profile', function (req, res) {
 	}
 });
 
-// OAUTH FLOW
+// TEMPLATE ROUTES
+app.get('/', function (req, res) {
+	var franklin = [
+		{QB : "Aaron Rodgers - 19.43"},
+		{WR : "Julian Edelman - 8.21"},
+		{WR : "Alshon Jeffreyt - 9.81"},
+		{RB : "Marshawn Lynch - 16.23"},
+		{RB : "Lamar Miller - 13.21"},
+		{TE : "Benjamin Watson - 12.41"}
+	];
 
 
 
 
+
+
+
+});	
 
 
 
