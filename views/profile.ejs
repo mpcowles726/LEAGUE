@@ -52,21 +52,39 @@
   <div id="column2" class="col-xs-12 col-sm-4 panel" > 
  <button type="button" class="btn btn-default text-center" data-toggle="dropdown" id="dropBtn">TEAMS</button>
   	<ul class="dropdown-menu" id="playerList">
-  		<a><li id="Franklin">Franklin</li></a> 
-      <a><li id="Benson">Benson</li></a> 
-      <a><li id="Eric">Eric</li></a> 
-      <a><li id="Marcus">Marcus</li></a> 
-      <a><li id="Steven">Steven</li></a> 
-      <a><li id="Nick">Nick</li></a> 
+  		<a class = "Franklin"><li class = "Franklin">Franklin</li></a> 
+      <a class = "Benson" ><li class = "Benson">Benson</li></a> 
+      <a class = "Eric"><li class = "Eric">Eric</li></a> 
+      <a class = "Marcus"><li class = "Marcus">Marcus</li></a> 
+      <a class = "Steven"><li class = "Steven">Steven</li></a> 
+      <a class = "Nick"><li class = "Nick">Nick</li></a> 
       
   	</ul>
 
 
   </div>
   <div id="column3" class="col-xs-12 col-sm-4 panel" >
- <h2> OPPONENT </h2>
-   <div id="partials">
+ <h2 class = "opponent"> OPPONENT </h2>
+   <div class = "partials">
+   <div class="Benson">
    <% include ./partials/Benson %>
+ </div>
+
+  <div class = "Franklin">
+   <% include ./partials/Franklin %>
+ </div>
+  <div class = "Eric">
+   <% include ./partials/Eric %>
+ </div>
+  <div class = "Marcus">
+   <% include ./partials/Marcus %>
+ </div>
+  <div class = "Steven">
+   <% include ./partials/Steven %>
+ </div>
+  <div class = "Nick">
+   <% include ./partials/Nick %>
+ </div>
  </div>
 
 </div>
